@@ -1,0 +1,33 @@
+<head>
+  <title>Custom Publication Example</title>
+</head>
+
+<body>
+  {{> dashboard}}
+</body>
+
+<template name="dashboard">
+  <h1>Custom Publication Example</h1>
+  <h4>Total Messages: {{totalMessages}}</h4>
+  <button id="generateMessage">Create random message</button>
+
+  <h3>Code Blue Messages</h3>
+  <ul>
+  {{#each users}}
+  	<li style="margin-bottom: 10px;">
+  		[{{code}}] &nbsp; <strong>{{sender}}</strong> says, "{{subject}}" <em>on {{dateCreated}}</em>
+  	</li>
+  {{/each}}
+  </ul>
+
+  <h3>All Messages</h3>
+  <ul>
+  {{#each allMessages}}
+	<li style="margin-bottom: 10px;">
+  		[{{code}}] &nbsp; <strong>{{sender}}</strong> says, "{{subject}}" <em>on {{dateCreated}}</em>
+  	</li>
+  {{/each}}
+  </ul>
+
+  
+</template>
