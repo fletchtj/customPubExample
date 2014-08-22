@@ -86,7 +86,7 @@ if (Meteor.isServer) {
     var self = this
       , _messages = Messages.find({ "code": "BLUE" }, { "sort": { "createdAt": -1 } })
       , _uniqueSenders = [];
-    console.log(_messages.count());
+      
     _.each(_messages.fetch(), function (m) {
       if ( !_.contains(_uniqueSenders, m.sender) ) {
         self.added("latestMessageForUsers", m.sender, m);
